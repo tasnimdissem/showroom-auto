@@ -1,0 +1,54 @@
+<div class="container-fluid header">
+  <div class="search-controls">
+    <div class="row align-items-center gy-3">
+      <div class="col-12 col-md-8">
+        <div class="input-group input-group-lg">
+          <span class="input-group-text" id="inputGroup-sizing-lg">🔍 Search</span>
+          <input [(ngModel)]="searchQuery" (input)="selectAutoList(searchQuery)" #brand type="text" class="form-control" 
+          placeholder="e.g. BMW, Audi, Mercedes..." aria-label="Search cars" aria-describedby="inputGroup-sizing-lg">
+          <button (click)="selectAutoList(searchQuery)" class="btn btn-success">Search</button>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="input-group input-group-lg">
+          <span class="input-group-text">Sort by</span>
+          <select [(ngModel)]="sortBy" (change)="onSortChange()" class="form-select">
+            <option value="name">Name (A-Z)</option>
+            <option value="price-asc">Price (Low to High)</option>
+            <option value="price-desc">Price (High to Low)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container autos-grid">
+  <div class="results-info">
+    <h3>{{ selectedAutos.length }} car(s) found</h3>
+  </div>
+  <div class="row g-4">
+    @for(auto of selectedAutos; track auto.id; let indice=$index; let even=$even; let odd=$odd) {
+    <div class="col-12 col-sm-6 col-md-4 d-flex">
+      <div class="card flex-fill">
+        <img [src]="'/' + auto.photo" class="card-img-top" alt="{{auto.brand}} {{auto.model}}">
+        <div class="card-info">
+          <h5 class="card-title">{{indice + 1}}. {{auto.brand}} - {{auto.model}} </h5>
+          <p class="card-text"><strong>Power:</strong> {{auto.power}} hp</p>
+          <p class="card-text"><strong>Price:</strong> {{auto.price|currency:'TND'}}</p>
+          <p class="card-text"><strong>Stock:</strong> {{auto.availability}} units</p>
+          <button type="button" class="btn btn-primary" (click)="showDetails(auto)">More details</button>
+        </div>
+      </div>
+    </div>
+    }
+    @empty {
+      <div class="col-12">
+        <div class="no-results">
+          <p>❌ No cars found matching your search.</p>
+          <p class="reset-hint">Try a different search term</p>
+        </div>
+      </div>
+    }
+  </div>
+</div>

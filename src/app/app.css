@@ -1,0 +1,38 @@
+:root {
+    --primary-color: #0a5c2d;
+    --primary-dark: #0e7a3d;
+    --accent-color: #2ecc71;
+    --light-bg: #f8fafb;
+    --border-color: #e0e0e0;
+    --text-color: #2c3e50;
+}
+
+body {
+    background-color: var(--light-bg);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+}
+
+p {
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 15px;
+}
+
+.row {
+    justify-content: center;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-dark);
+} 

@@ -1,0 +1,23 @@
+@if(auto){
+<div class="container detail-wrapper">
+  <div class="row gy-4 align-items-center">
+    <div class="col-12 col-md-5 d-flex justify-content-center">
+      <img [src]="'/' + auto.photo" class="detail-img" alt="{{auto.brand}} {{auto.model}}">
+    </div>
+    <div class="col-12 col-md-7">
+      <h2>{{auto.brand}} - {{auto.model}}</h2>
+      <p class="lead">{{auto.description}}</p>
+      <p class="mb-1"><strong>Power:</strong> {{auto.power}}</p>
+      <p class="mb-1"><strong>Price:</strong> {{auto.price | currency:'TND'}}</p>
+      <p class="mb-1"><strong>Availability:</strong> {{auto.availability}} units</p>
+      <a routerLink="/" class="btn btn-outline-success mt-3">Back to list</a>
+    </div>
+  </div>
+</div>
+}
+@else {
+  <div class="container py-5">
+    <p>Car not found.</p>
+    <a routerLink="/" class="btn btn-outline-success mt-3">Back to list</a>
+  </div>
+}

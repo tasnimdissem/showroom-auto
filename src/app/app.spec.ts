@@ -1,5 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { App } from './app';
+import { HeadBar } from './components/head-bar/head-bar';
+import { SearchBar } from './components/search-bar/search-bar';
 
 describe('App', () => {
   beforeEach(async () => {
