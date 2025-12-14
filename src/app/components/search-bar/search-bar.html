@@ -31,7 +31,7 @@
     @for(auto of selectedAutos; track auto.id; let indice=$index; let even=$even; let odd=$odd) {
     <div class="col-12 col-sm-6 col-md-4 d-flex">
       <div class="card flex-fill">
-        <img [src]="'/' + auto.photo" class="card-img-top" alt="{{auto.brand}} {{auto.model}}">
+        <img [src]="auto.photo" class="card-img-top" alt="{{auto.brand}} {{auto.model}}">
         <div class="card-info">
           <h5 class="card-title">{{indice + 1}}. {{auto.brand}} - {{auto.model}} </h5>
           <p class="card-text"><strong>Power:</strong> {{auto.power}} hp</p>
