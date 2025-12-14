@@ -14,7 +14,9 @@
           "builder": "@angular/build:application",
           "options": {
             "outputPath": "dist/showroom-auto",
+            "baseHref": "/showroom-auto/",
             "browser": "src/main.ts",
+            "prerender": false,
             "polyfills": [
               "zone.js"
             ],

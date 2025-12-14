@@ -1,15 +1,16 @@
 :root {
-    --primary-color: #0a5c2d;
-    --primary-dark: #0e7a3d;
-    --accent-color: #2ecc71;
-    --light-bg: #f8fafb;
-    --border-color: #e0e0e0;
-    --text-color: #2c3e50;
+    --primary-color: #1f3b73;      /* deep indigo */
+    --primary-dark: #15294f;       /* darker indigo */
+    --accent-color: #ff7a59;       /* warm coral */
+    --accent-2: #ffd166;           /* soft amber */
+    --light-bg: #f6f7fb;           /* pale grayish */
+    --border-color: #dfe3ec;       /* light border */
+    --text-color: #1f2933;         /* dark slate */
 }
 
 body {
     background-color: var(--light-bg);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--text-color);
 }
 
